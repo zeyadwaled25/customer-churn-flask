@@ -7,10 +7,10 @@ based on input data such as demographics, subscription details, and usage patter
 ## 🖼️ Screenshots
 
 ### Input Page
-![Input Page](./app/static/images/input_form.png)
+![Input Page](app/static/images/input_form.png)
 
 ### Results Page
-![Results Page](./app/static/images/results_page.png)
+![Results Page](app/static/images/results_page.png)
 
 ## 📌 Features
 - **Customer churn prediction** using a trained ML model.
