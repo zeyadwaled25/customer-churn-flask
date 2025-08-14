@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telco Churn Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="wh1">Telco Churn Prediction</h1>
+    <div class="card">
+        <form action="/predict" method="post">
+            <div class="section-title">• Customer Charges</div>
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <label class="form-label">Monthly Charges</label>
+                    <input type="number" step="0.01" class="form-control" name="monthly_charges" placeholder="e.g. 70.50" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Total Charges</label>
+                    <input type="number" step="0.01" class="form-control" name="total_charges" placeholder="e.g. 1500.75" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Tenure (months)</label>
+                    <input type="number" class="form-control" name="tenure" placeholder="e.g. 24" required>
+                </div>
+            </div>
+
+            <div class="section-title">• Customer Information</div>
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label class="form-label">Senior Citizen</label>
+                    <select class="form-select" name="senior_citizen" required>
+                        <option value="" disabled selected>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Partner</label>
+                    <select class="form-select" name="partner" required>
+                        <option value="" disabled selected>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Dependents</label>
+                    <select class="form-select" name="dependents" required>
+                        <option value="" disabled selected>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Paperless Billing</label>
+                    <select class="form-select" name="paperless_billing" required>
+                        <option value="" disabled selected>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-title">• Services & Internet</div>
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label class="form-label">Internet Service</label>
+                    <select class="form-select" name="internet_service" required>
+                        <option>Fiber optic</option>
+                        <option>DSL</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Online Security</label>
+                    <select class="form-select" name="online_security" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Online Backup</label>
+                    <select class="form-select" name="online_backup" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Device Protection</label>
+                    <select class="form-select" name="device_protection" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Tech Support</label>
+                    <select class="form-select" name="tech_support" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Streaming TV</label>
+                    <select class="form-select" name="streaming_tv" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Streaming Movies</label>
+                    <select class="form-select" name="streaming_movies" required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-title">• Contract & Payment</div>
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label class="form-label">Contract Type</label>
+                    <select class="form-select" name="contract_type" required>
+                        <option>Month-to-month</option>
+                        <option>One year</option>
+                        <option>Two year</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Payment Method</label>
+                    <select class="form-select" name="payment_method" required>
+                        <option>Electronic check</option>
+                        <option>Mailed check</option>
+                        <option>Bank transfer</option>
+                        <option>Credit card</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between align-items-center">
+                <div class="predictions d-flex gap-2">
+                    <button type="submit" class="btn btn-success">Predict</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+                <div class="details d-flex gap-2">
+                    <a href="/visualizations" class="btn btn-outline-primary">Visualization</a>
+                    <a href="/about" class="btn btn-outline-info">About Project</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
